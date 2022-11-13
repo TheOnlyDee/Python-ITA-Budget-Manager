@@ -24,13 +24,19 @@ def spend(name, amount):
     spent = expenditure[name]
     return budgeted - spent
 
-def add_summary():
+def print_summary():
+    print("Budget           Previsto      Speso  Residuo")
+    print("------------     -----------  ------- -------")
     for name in budgets:
-        budgeted = budgets[name]
-        spent = expenditure[name]
-        remaining = budgeted - spent
-        print(name, budgeted, spent, remaining)
-         
+        total_budgeted = 0
+        total_spent = 0
+        total_remaining = 0
+        print(f'{name} {budgeted:10.2f} {spent:10.2f} '
+              f'{remaining:10.2f}')
+    print("------------     -----------  ------- -------")
+    print(f'{"Totale":15s} {total_budgeted:10.2f} {total_spent:10.2f} '
+          f'{total_budgeted - total_spent:10.2f}')
 
-#test = add_budget("Alimenti", 500)
-#print(test)
+
+
+
